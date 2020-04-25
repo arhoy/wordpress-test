@@ -12,8 +12,8 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Emotion Starter`,
-    description: `A simple Gatsby Starter with Emotion and Layout File, Google Analytics and Google Fonts`,
+    title: `WordPress Source Plugin`,
+    description: `Testing out wordpress source plugin with Gatsby`,
     author: `Alex Quasar`,
     twitterUsername: '@_aquasar',
     image: '/default.png',
@@ -45,6 +45,18 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        // baseUrl will need to be updated with your WordPress source
+        baseUrl: `edmrealty-com.stackstaging.com`,
+        protocol: `http`,
+        // is it hosted on wordpress.com, or self-hosted?
+        hostingWPCOM: false,
+        // does your site use the Advanced Custom Fields Plugin?
+        useACF: true,
       },
     },
     {
